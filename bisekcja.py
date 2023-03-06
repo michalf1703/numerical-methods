@@ -1,7 +1,6 @@
 import funkcje as f
 
 
-
 def bisekcjaEps(a, b, eps, flag):
     fa = f.function(a,flag)
     fb = f.function(b,flag)
@@ -14,7 +13,8 @@ def bisekcjaEps(a, b, eps, flag):
             iter += 1
             x0 = (a + b) / 2
             fx0 = f.function(x0, flag)
-            if abs(fx0) < eps:
+#warunek zakonczenia; WARIANT A
+            if abs(b - a) < eps:
                 return x0, iter
             if fx0 * fb < 0:
                 a = x0

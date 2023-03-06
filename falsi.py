@@ -21,6 +21,7 @@ def falsiEps(a, b, eps, flag):
             else:
                 b = x0
                 fb = fx0
+#warunek zakonczenia; WARIANT A
             if abs(b - a) < eps:
                 return (a + b) / 2, iter
 
