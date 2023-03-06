@@ -1,7 +1,7 @@
 import funkcje as f
 
 
-def falsi(a, b, eps, flag):
+def falsiEps(a, b, eps, flag):
     fa = f.function(a,flag)
     fb = f.function(b,flag)
     iter = 0

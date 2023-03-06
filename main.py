@@ -33,9 +33,9 @@ def main():
                str(bisekcja.bisekcjaEps(x_min, x_max, dokladnosc, funkcja)[1]))
          wykres.wykresB(x_min,x_max,bisekcja.bisekcjaEps(x_min,x_max,dokladnosc,funkcja)[0],funkcja)
          print("\n\nWynik dla Reguly Falsi:\n")
-         print(str(falsi.falsi(x_min, x_max, dokladnosc, funkcja)[0]) + "\nIlosc iteracji: " +
-               str(falsi.falsi(x_min, x_max, dokladnosc, funkcja)[1]))
-         wykres.wykresF(x_min, x_max, falsi.falsi(x_min, x_max, dokladnosc, funkcja)[0], funkcja)
+         print(str(falsi.falsiEps(x_min, x_max, dokladnosc, funkcja)[0]) + "\nIlosc iteracji: " +
+               str(falsi.falsiEps(x_min, x_max, dokladnosc, funkcja)[1]))
+         wykres.wykresF(x_min, x_max, falsi.falsiEps(x_min, x_max, dokladnosc, funkcja)[0], funkcja)
 
     if zatrzymanie == '2':
         iteracja = int(input("Podaj ilosc iteracji jaka ma sie wykonac:"))
