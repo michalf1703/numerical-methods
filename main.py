@@ -6,14 +6,14 @@ from numpy import double
 
 def main():
 
-#wybor rodzaju funkcji
+#wybor funkcji
     funkcja = input("Wybierz rodzaj funkcji:\n"
-                    " 1) Wielomian,\n"
-                    " 2) Funkcja trygonometryczna,\n"
-                    " 3) Funkcja wykladnicza,\n"
-                    " 4) Funkcja zlozona\n")
+                    " 1) Wielomian,\n"  # 2x^3+3x^2+4x-1
+                    " 2) Funkcja trygonometryczna,\n" # cos(x) + sin(x)
+                    " 3) Funkcja wykladnicza,\n" # 5^x - 4
+                    " 4) Funkcja zlozona\n") # x^3 + 2^x - cos(x)
 
-#wybieramy przedzial
+#wybieramy przedzial na którym poszukiwane bedzie miejsce zerowe
     check = False
     while not check:
         x_min = double(input("Wartosc lewego przedzialu: "))
@@ -22,7 +22,7 @@ def main():
              check = True
         if not check:
            print("Wartosc lewego przedzialu musi byc mniejsza niz wartosc prawego przedzialu!\n")
-#
+#wybieramy kryterium zatrzymania algorytmu
     zatrzymanie = input("Wybierz kryterium zatrzymania algorytmu:\n"
                             " 1) Spelnienie warunku nalozonego na dokladnosc,\n"
                             " 2) Zadana liczba iteracji\n")
