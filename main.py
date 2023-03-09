@@ -6,14 +6,18 @@ from numpy import double
 
 def main():
 
-#wybor rodzaju funkcji
     funkcja = input("Wybierz rodzaj funkcji:\n"
-                    " 1) Wielomian,\n"
-                    " 2) Funkcja trygonometryczna,\n"
-                    " 3) Funkcja wykladnicza,\n"
-                    " 4) Funkcja zlozona\n")
+                    " 1) Wielomian: 2x^3 + 3x^2 + 4x - 1 \n"
+                    " 2) Wielomian: x^4 + 2x - 3, \n"
+                    " 3) Wielomian: 2x^2 - 3x - 5 \n"
+                    " 4) Funkcja trygonometryczna:, 2sin(x) + cos(x) \n"
+                    " 5) Funkcja trygonometryczna: tg(x) + 2sin(x) \n"
+                    " 6) Funkcja wykladnicza: 7^x - 4\n"
+                    " 7) Funkcja wykladnicza: 10^x - 2\n"
+                    " 8) Funkcja zlozona: x^3 + 5^x - sin(x) \n"
+                    " 9) Funkcja zlozona: 2x^4 + 2^x - cos(x) \n")
 
-#wybieramy przedzial
+#wybieramy przedzial na którym poszukiwane bedzie miejsce zerowe
     check = False
     while not check:
         x_min = double(input("Wartosc lewego przedzialu: "))
@@ -22,7 +26,8 @@ def main():
              check = True
         if not check:
            print("Wartosc lewego przedzialu musi byc mniejsza niz wartosc prawego przedzialu!\n")
-#
+
+#wybieramy kryterium zatrzymania algorytmu
     zatrzymanie = input("Wybierz kryterium zatrzymania algorytmu:\n"
                             " 1) Spelnienie warunku nalozonego na dokladnosc,\n"
                             " 2) Zadana liczba iteracji\n")
@@ -33,9 +38,9 @@ def main():
                str(bisekcja.bisekcjaEps(x_min, x_max, dokladnosc, funkcja)[1]))
          wykres.wykresB(x_min,x_max,bisekcja.bisekcjaEps(x_min,x_max,dokladnosc,funkcja)[0],funkcja)
          print("\n\nWynik dla Reguly Falsi:\n")
-         print(str(falsi.falsi(x_min, x_max, dokladnosc, funkcja)[0]) + "\nIlosc iteracji: " +
-               str(falsi.falsi(x_min, x_max, dokladnosc, funkcja)[1]))
-         wykres.wykresF(x_min, x_max, falsi.falsi(x_min, x_max, dokladnosc, funkcja)[0], funkcja)
+         print(str(falsi.falsiEps(x_min, x_max, dokladnosc, funkcja)[0]) + "\nIlosc iteracji: " +
+               str(falsi.falsiEps(x_min, x_max, dokladnosc, funkcja)[1]))
+         wykres.wykresF(x_min, x_max, falsi.falsiEps(x_min, x_max, dokladnosc, funkcja)[0], funkcja)
 
     if zatrzymanie == '2':
         iteracja = int(input("Podaj ilosc iteracji jaka ma sie wykonac:"))
