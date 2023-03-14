@@ -19,7 +19,7 @@ def function(x, flag):
         parameters = [2, -3, -5]
         fx = horner(x, parameters)
     if flag == '4':
-        fx = 2 * np.sin(x) + np.cos(x)
+        fx = 3 * np.sin(x) - np.cos(x)
     if flag == '5':
         fx = np.sin(x) + 2 * np.sin(x)
     if flag == '6':

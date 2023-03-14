@@ -8,17 +8,18 @@ import funkcje as f
 #metoda znajdujaca miejsca zerowe funkcji wybranej przez uzytkownika
 # za pomoca Zasady Falsi z wykorzystaniem kryterium stopu poprzez osiagniecie zadanej dokladnosci obliczen
 def falsiEps(a, b, eps, flag):
-# podane krance przedzialu podstawiamy do funkcji wybranej przez uzytkownika
-    fa = f.function(a,flag)
-    fb = f.function(b,flag)
-#zliczamy liczbe wykonanych iteracji na potrzeby sprawodzania
+    # podane krance przedzialu podstawiamy do funkcji wybranej przez uzytkownika
+    fa = f.function(a, flag)
+    fb = f.function(b, flag)
+    # zliczamy liczbe wykonanych iteracji na potrzeby sprawodzania
     iter = 0
-#sprawdzamy poprawnosc zalozenia o przeciwnych znakach funkcji na krancach badanego przedzialu
+    # sprawdzamy poprawnosc zalozenia o przeciwnych znakach funkcji na krancach badanego przedzialu
     if fa * fb > 0:
         print("Funkcja nie spełnia założeń (fa * fb >0) ")
     else:
         guardian = True
-        while guardian is True:
+        x_prev = None
+        while guardian:
             iter += 1
             x0 = b - (fb * (b - a)) / (fb - fa)
             fx0 = f.function(x0, flag)
@@ -30,8 +31,9 @@ def falsiEps(a, b, eps, flag):
             else:
                 b = x0
                 fb = fx0
-            if abs(b - a) < eps:
-                return (a + b) / 2, iter
+            if x_prev and abs(x0 - x_prev) < eps:
+                return x0, iter
+            x_prev = x0
 
 def falsiIter(a, b, N, flag):
     fa = f.function(a,flag)

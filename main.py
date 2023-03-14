@@ -11,7 +11,7 @@ def main():
                     " 2) Wielomian: x^4 + 2x - 3, \n"
                     " 3) Wielomian: 2x^2 - 3x - 5 \n"
                     " 4) Funkcja trygonometryczna:, 2sin(x) + cos(x) \n"
-                    " 5) Funkcja trygonometryczna: tg(x) + 2sin(x) \n"
+                    " 5) Funkcja trygonometryczna: 3sin(x) - cos(x) \n"
                     " 6) Funkcja wykladnicza: 7^x - 4\n"
                     " 7) Funkcja wykladnicza: 10^x - 2\n"
                     " 8) Funkcja zlozona: x^3 + 5^x - sin(x) \n"
