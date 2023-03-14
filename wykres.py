@@ -4,7 +4,7 @@ from numpy import double
 import funkcje as f
 
 
-def wykresB(x, y, x0, flag):
+def wykres(x, y, x0,x02, flag):
     x_data = np.linspace(x, y, 1000)
     y_data = f.function(x_data, flag)
     fig = plt.figure()
@@ -16,14 +16,24 @@ def wykresB(x, y, x0, flag):
     ax.xaxis.set_ticks_position('bottom')
     ax.yaxis.set_ticks_position('left')
     if type(x0) == double:
-        plt.plot(x0, 0, 'ro')
-    plt.plot(x_data, y_data, 'g')
+        plt.plot(x0, 0, "o", color = 'green')
+    if type(x02) == double:
+        plt.plot(x02, 0, "ro")
+    plt.plot(x_data, y_data, 'b')
     plt.xlabel('X', loc='right')
     plt.ylabel('Y', loc='top')
-    plt.title('Wykres dla bisekcji')
+    plt.title('Wykres dla bisekcji i reguły Falsi')
+    line = plt.plot(x, y, label='bisekcja')
+    plt.setp(line, color='g')
+    line = plt.plot(x, y, label='falsi')
+    plt.setp(line, color='r')
+    line = plt.plot(x, y, label='wykres danej funkcji')
+    plt.setp(line, color='b')
+    plt.legend()
     plt.show()
 
-def wykresF(x, y, x0, flag):
+
+def wykresPrawdziwy(x, y, flag):
     x_data = np.linspace(x, y, 1000)
     y_data = f.function(x_data, flag)
     fig = plt.figure()
@@ -34,10 +44,25 @@ def wykresF(x, y, x0, flag):
     ax.spines['top'].set_color('none')
     ax.xaxis.set_ticks_position('bottom')
     ax.yaxis.set_ticks_position('left')
-    if type(x0) == double:
-        plt.plot(x0, 0, 'ro')
     plt.plot(x_data, y_data, 'g')
     plt.xlabel('X', loc='right')
     plt.ylabel('Y', loc='top')
-    plt.title('Wykres dla Zasady Falsi')
+    if flag == '1':
+        plt.title('Wykres dla f(x) = 2x^3 + 3x^2 + 4x - 1')
+    if flag == '2':
+        plt.title('Wykres dla f(x) = x^4 + 2x - 3')
+    if flag == '3':
+        plt.title('Wykres dla f(x) = 2x^2 - 3x - 5')
+    if flag == '4':
+        plt.title('Wykres dla f(x) = 3sin(x) - cos(x)')
+    if flag == '5':
+        plt.title('Wykres dla f(x) = cos(x) + 2sin(x)')
+    if flag == '6':
+        plt.title('Wykres dla f(x) = 7^x - 4')
+    if flag == '7':
+        plt.title('Wykres dla f(x) = 10^x - 2')
+    if flag == '8':
+        plt.title('Wykres dla f(x) = x^3 + 5^x - sin(x)')
+    if flag == '9':
+        plt.title('Wykres dla f(x) = 2x^4 + 2^x - cos(x)')
     plt.show()

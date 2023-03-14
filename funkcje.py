@@ -21,7 +21,7 @@ def function(x, flag):
     if flag == '4':
         fx = 3 * np.sin(x) - np.cos(x)
     if flag == '5':
-        fx = np.sin(x) + 2 * np.sin(x)
+        fx = np.cos(x) + 2 * np.sin(x)
     if flag == '6':
         fx = 7 ** x - 4
     if flag == '7':
@@ -33,5 +33,4 @@ def function(x, flag):
         parameters = [2, 0, 0, 0, 0]
         fx = horner(x, parameters) + 2**x - np.cos(x)
     return fx
-
 
