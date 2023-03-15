@@ -36,23 +36,20 @@ def main():
          print("\n\nWynik dla bisekcji:\n")
          print(str(bisekcja.bisekcjaEps(x_min, x_max, dokladnosc, funkcja)[0]) + "\nIlosc iteracji: " +
                str(bisekcja.bisekcjaEps(x_min, x_max, dokladnosc, funkcja)[1]))
-         wykres.wykresPrawdziwy(x_min,x_max,funkcja)
-        # wykres.wykresB(x_min,x_max,bisekcja.bisekcjaEps(x_min,x_max,dokladnosc,funkcja)[0],funkcja)
          print("\n\nWynik dla Reguly Falsi:\n")
          print(str(falsi.falsiEps(x_min, x_max, dokladnosc, funkcja)[0]) + "\nIlosc iteracji: " +
                str(falsi.falsiEps(x_min, x_max, dokladnosc, funkcja)[1]))
-        # wykres.wykresF(x_min, x_max, falsi.falsiEps(x_min, x_max, dokladnosc, funkcja)[0], funkcja)
+         wykres.wykresPrawdziwy(x_min,x_max,funkcja)
          wykres.wykres(x_min,x_max,bisekcja.bisekcjaEps(x_min,x_max,dokladnosc,funkcja)[0],falsi.falsiEps(x_min,x_max,dokladnosc,funkcja)[0],funkcja)
 
     if zatrzymanie == '2':
         iteracja = int(input("Podaj ilosc iteracji jaka ma sie wykonac:"))
         print("\n\nWynik dla bisekcji:\n\n")
         print(str(bisekcja.bisekcjaIter(x_min, x_max, iteracja, funkcja)))
-        wykres.wykresPrawdziwy(x_min, x_max, funkcja)
-        wykres.wykresB(x_min, x_max, bisekcja.bisekcjaIter(x_min, x_max, iteracja, funkcja), funkcja)
         print("\n\nWynik dla Reguly Falsi:\n\n")
         print(str(falsi.falsiIter(x_min, x_max, iteracja, funkcja)))
-        wykres.wykresF(x_min, x_max, bisekcja.bisekcjaIter(x_min, x_max, iteracja, funkcja), funkcja)
+        wykres.wykresPrawdziwy(x_min, x_max, funkcja)
+        wykres.wykres(x_min,x_max,bisekcja.bisekcjaIter(x_min,x_max,iteracja,funkcja),falsi.falsiIter(x_min,x_max,iteracja,funkcja),funkcja)
 
 if __name__ == '__main__':
     main()

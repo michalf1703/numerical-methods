@@ -16,17 +16,34 @@ def wykres(x, y, x0,x02, flag):
     ax.xaxis.set_ticks_position('bottom')
     ax.yaxis.set_ticks_position('left')
     if type(x0) == double:
-        plt.plot(x0, 0, "o", color = 'green')
+        plt.plot(x0, 0, "o", color = 'm')
     if type(x02) == double:
-        plt.plot(x02, 0, "ro")
+        plt.plot(x02, 0, "o", color = 'yellow')
     plt.plot(x_data, y_data, 'b')
     plt.xlabel('X', loc='right')
     plt.ylabel('Y', loc='top')
-    plt.title('Wykres dla bisekcji i reguły Falsi')
+    if flag == '1':
+        plt.title('Wykres dla f(x)= 2x^3 + 3x^2 + 4x - 1 wraz z miejscem zerowym')
+    if flag == '2':
+        plt.title('Wykres dla f(x)= x^4 + 2x - 3 wraz z miejscem zerowym')
+    if flag == '3':
+        plt.title('Wykres dla f(x)= 2x^2 - 3x - 5 wraz z miejscem zerowym')
+    if flag == '4':
+        plt.title('Wykres dla f(x) = 3sin(x) - cos(x) wraz z miejscem zerowym')
+    if flag == '5':
+        plt.title('Wykres dla f(x) = cos(x) + 2sin(x) wraz z miejscem zerowym')
+    if flag == '6':
+        plt.title('Wykres dla f(x) = 7^x - 4 wraz z miejscem zerowym')
+    if flag == '7':
+        plt.title('Wykres dla f(x) = 10^x - 2 wraz z miejscem zerowym')
+    if flag == '8':
+        plt.title('Wykres dla f(x) = x^3 + 5^x - sin(x) wraz z miejscem zerowym')
+    if flag == '9':
+        plt.title('Wykres dla f(x) = 2x^4 + 2^x - cos(x) wraz z miejscem zerowym')
     line = plt.plot(x, y, label='bisekcja')
-    plt.setp(line, color='g')
+    plt.setp(line, color='m')
     line = plt.plot(x, y, label='falsi')
-    plt.setp(line, color='r')
+    plt.setp(line, color='yellow')
     line = plt.plot(x, y, label='wykres danej funkcji')
     plt.setp(line, color='b')
     plt.legend()
@@ -48,21 +65,21 @@ def wykresPrawdziwy(x, y, flag):
     plt.xlabel('X', loc='right')
     plt.ylabel('Y', loc='top')
     if flag == '1':
-        plt.title('Wykres dla f(x) = 2x^3 + 3x^2 + 4x - 1')
+        plt.title('Wykres dla f(x)= 2x^3 + 3x^2 + 4x - 1')
     if flag == '2':
-        plt.title('Wykres dla f(x) = x^4 + 2x - 3')
+        plt.title('Wykres dla f(x)= x^4 + 2x - 3')
     if flag == '3':
-        plt.title('Wykres dla f(x) = 2x^2 - 3x - 5')
+        plt.title('Wykres dla f(x)= 2x^2 - 3x - 5')
     if flag == '4':
-        plt.title('Wykres dla f(x) = 3sin(x) - cos(x)')
+        plt.title('Wykres dla f(x)= 3sin(x) - cos(x)')
     if flag == '5':
-        plt.title('Wykres dla f(x) = cos(x) + 2sin(x)')
+        plt.title('Wykres dla f(x)= cos(x) + 2sin(x)')
     if flag == '6':
-        plt.title('Wykres dla f(x) = 7^x - 4')
+        plt.title('Wykres dla f(x)= 7^x - 4')
     if flag == '7':
-        plt.title('Wykres dla f(x) = 10^x - 2')
+        plt.title('Wykres dla f(x)= 10^x - 2')
     if flag == '8':
-        plt.title('Wykres dla f(x) = x^3 + 5^x - sin(x)')
+        plt.title('Wykres dla f(x)= x^3 + 5^x - sin(x)')
     if flag == '9':
-        plt.title('Wykres dla f(x) = 2x^4 + 2^x - cos(x)')
+        plt.title('Wykres dla f(x)= 2x^4 + 2^x - cos(x)')
     plt.show()
