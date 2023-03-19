@@ -12,7 +12,7 @@ def bisekcjaEps(x_min, x_max, epsilon, wyborFunkcja):
         print("Funkcja nie spelnia zalozen (fa * fb >0)")
     else:
         guardian = True
-#x_prev ---> poprzednia wartosc
+#x_prev ---> wartosc poprzedniej iteracji
         x_prev = None
         while guardian is True:
             iteracja += 1
@@ -30,7 +30,6 @@ def bisekcjaEps(x_min, x_max, epsilon, wyborFunkcja):
             else:
                 x_max = x0
                 fb = fx0
-
 
 #metoda znajdujaca miejsca zerowe funkcji wybranej przez uzytkownika za pomoca metody biskecji z wykorzystaniem kryterium stopu poprzez wykonanie okreslonej liczby iteracji
 def bisekcjaIter(x_min, x_max, iteracja, wyborFunkcja):
