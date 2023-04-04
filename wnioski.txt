@@ -1,3 +1,0 @@
-dla małych przedziałów wszystko śmiga elegancko, a przy dużych falsi nie wyrabia cos
-
-czy falsi jest dobrze zaimplementowane???
