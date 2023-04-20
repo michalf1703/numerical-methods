@@ -16,10 +16,10 @@ def trigonometric(x):
     return math.sin(x)
 
 
-def submission_1(x):
+def composite_1(x):
     return 4 * x * abs(x)
 
 
-def submission_2(x):
+def composite_2(x):
     return math.sin(x) + ((2 * x + 2) * x + 4) * x - 1
 

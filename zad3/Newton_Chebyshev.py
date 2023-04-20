@@ -1,7 +1,7 @@
 import math
 
 
-def knots_x(knots_number, lower_range, upper_range):
+def knots_x(knots_number: int, lower_range: float, upper_range: float):
     x = []
     #obliczanie węzłów Czebyszewa (jakiś x) na przedziale [-1,1] wzór cos(pi * (2i + 1) / (2*n + 1)) i przeskalowanie
     #ich do przedziału podanego w programie wzór (x[i] * (b - a) + (a + b)) / 2
@@ -12,7 +12,7 @@ def knots_x(knots_number, lower_range, upper_range):
     return x
 
 #obliczanie wartości funkcji (wybranej w menu) dla poszczególnych węzłów
-def knots_y(x, function):
+def knots_y(x: [], function):
     y = []
     for knot in x:
         y.append(function(knot))
@@ -29,7 +29,7 @@ def coefficients(x: [], y: [], knots_number: int):
     return a
 
 #obliczanie wartości wielomianu w postaci Newtona w danym punkcie
-def newton(a, x, point):
+def newton(a: [], x: [], point: float):
     result = 0
     for i in range(len(x)):
         if a[i] != 0:
