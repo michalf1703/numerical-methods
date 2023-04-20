@@ -25,7 +25,7 @@ def choose_number_of_knots():
 
 if __name__ == '__main__':
     draw_menu()
-    choose_range()
+
 
 
 
