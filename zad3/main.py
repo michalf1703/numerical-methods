@@ -8,7 +8,7 @@ def main():
     x = nk.knots_x(options[3], options[1], options[2])
     y = nk.knots_y(x, options[0])
     a = nk.coefficients(x, y, options[3])
-    print(nk.newton(a, x, 1.8))
+    print("Wynik: ", nk.newton(a, x, 1.8))
     df.draw_functions(options[1], options[2], options[0], a, x, y)
 def menu():
     function = choose_func()
@@ -21,10 +21,12 @@ def choose_func():
         print("Wybierz funkcje: "
               "\n1. 4x+3"
               "\n2. |x|"
-              "\n3. 2x^3 + 2x^2 + 4x - 1"
+              "\n3. -3x^3 - x^2 + 4x + 9"
               "\n4. sin(x)"
               "\n5. 4x * |x|"
-              "\n6. sin(x) + 2x^3 + 2x^2 + 4x - 1")
+              "\n6. sin(x) + 2x^3 + 2x^2 + 4x - 1"
+              "\n7. |cos(3x+1)|")
+
         choice = int(input("Wybrana funkcja: "))
         if choice == 1:
             return func.linear
@@ -38,6 +40,8 @@ def choose_func():
             return func.composite_1
         elif choice == 6:
             return func.composite_2
+        elif choice ==7:
+            return func.composite_3
         print("Wybierz prawidłową liczbę (od 1 do 6)")
 
 
