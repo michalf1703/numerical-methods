@@ -10,7 +10,10 @@ def absolute_x(x):
 
 #git funkcja
 def polynomial(x):
-    return -3*x*x*x -(x*x) + (4 * x) + 9
+    fx = 0.0
+    parameters = [-3,-1,4,9]
+    fx = horner(x, parameters)
+    return fx
 
 
 def trigonometric(x):
@@ -27,5 +30,9 @@ def composite_3(x):
     return abs(math.cos(3*x+1))
 
 
-#trzeba tutaj hornerem ajajaj
+def horner(n, tab):
+    result = 0
+    for i in tab:
+        result = result * n + i
+    return result
 
