@@ -26,3 +26,6 @@ def composite_2(x):
 def composite_3(x):
     return abs(math.cos(3*x+1))
 
+
+#trzeba tutaj hornerem ajajaj
+
