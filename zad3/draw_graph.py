@@ -20,6 +20,6 @@ def draw_functions(lower_range: float, upper_range: float, function, a: [], c_x:
     mplot.title("Dokładność interpolacji: " + str(r2))
     axes.set_xlabel('X')
     axes.set_ylabel('Y')
-
+    mplot.legend()
     mplot.show()
 
