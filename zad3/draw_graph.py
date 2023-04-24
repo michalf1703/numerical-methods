@@ -15,7 +15,7 @@ def draw_functions(lower_range: float, upper_range: float, function, a: [], c_x:
 
     axes.plot(x, y, "r", label="Oryginalna funkcja")
     axes.plot(x, newton_y, "b", label="Funkcja interpolowana")
-    axes.plot(c_x, c_y, ".")
+    axes.plot(c_x, c_y, ".", label = "Węzły interpolacji")
     r2 = round(100 * metrics.r2_score(y, newton_y), 3)
     mplot.title("Dokładność interpolacji: " + str(r2))
     axes.set_xlabel('X')
