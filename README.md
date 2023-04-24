@@ -9,6 +9,7 @@ Task1. Implementation of the bisection method and the Falsi rule in python
 
 
 
+
 Task2. Implementation of the Gauss-Jordan method in python
 
 Task3. Newton's interpolation method on Chebyshev nodes in python
