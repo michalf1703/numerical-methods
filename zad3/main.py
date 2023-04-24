@@ -8,7 +8,7 @@ def main():
     x = nk.knots_x(options[3], options[1], options[2])
     y = nk.knots_y(x, options[0])
     a = nk.coefficients(x, y, options[3])
-    print("Wynik: ", nk.newton(a, x, 1.8))
+    #print("Wynik: ", nk.newton(a, x, 1.8))
     df.draw_functions(options[1], options[2], options[0], a, x, y)
 def menu():
     function = choose_func()
