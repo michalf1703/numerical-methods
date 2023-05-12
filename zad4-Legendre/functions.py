@@ -1,19 +1,22 @@
-from numpy import sin, cos, e
+import numpy as np
 
-# definicja funkcji f1, która zwraca wartość bezwzględną z 2*x-3
-f1 = lambda x: abs(2 * x - 3)
 
-# definicja funkcji f2, która zwraca wartość sin(x+2)
-f2 = lambda x: sin(x + 2)
+def quadratic_function(x: float) -> float:
+    return x * x - 3 * x + 3
 
-# definicja funkcji f3, która zwraca wartość cos(2*x)
-f3 = lambda x: cos(2*x)
 
-# definicja funkcji f4, która zwraca wartość x^2
-f4 = lambda x: x * x
+def trigonometric_function(x: float) -> float:
+    return np.cos(x) * (x + 8)
 
-# definicja funkcji f5, która zwraca wartość cos(sin(x))
-f5 = lambda x: cos(sin(x))
 
-# definicja funkcji w, która zwraca wartość e^(-x^2)
-w = lambda x: e ** (- (x * x))
+def random_function(x: float) -> float:
+    return 1/(x*x)
+
+
+def function_value(x: float, flag: str) -> float:
+    if flag == '1':
+        return quadratic_function(x)
+    elif flag == '2':
+        return trigonometric_function(x)
+    elif flag == '3':
+        return random_function(x)
