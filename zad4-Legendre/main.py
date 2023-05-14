@@ -24,6 +24,9 @@ def main():
          previous_result_nc = result_nc
          result_nc = nc.newton_cotes_quadrature(input_a, input_b, chosen_function, iterations)
 
+    print(f"Wynik dla Newtona Cotesa:{round(result_nc,5)} Liczba iteracji: {iterations}")
+
+
     for i in range(2, 6):
         result_gl = gl.gaussian_legendre_quadrature(input_a, input_b, chosen_function, i)
         print(f"Wynik dla kwadratura Gaussa-Legendre'a: {round(result_gl, 5)}   Liczba węzłów: {i}")
